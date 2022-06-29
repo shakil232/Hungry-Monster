@@ -1,29 +1,42 @@
 
 import './App.css';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './Pages/Home/Home';
+import Review from './Pages/OrderReviews/Review/Review';
+import About from './Pages/About/About';
+import Connect from './Pages/Connect/Connect';
+import NotFound from './Pages/NotFound/NotFound';
+import { createContext, useState } from 'react';
+import DisplayMeal from './Pages/meals/DisplayMeal/DisplayMeal';
+
+export const FoodContext = createContext();
 
 function App() {
-//   <Router>
-//     <Routes>
-//       <Route path="/about" />
-//       </Routes>
-// </Router>
+  const [foodInfo, setFoodInfo] = useState([])
 
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faCopy, faQuestionCircle, faQrcode, faGithub } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-// <FontAwesomeIcon icon={faCoffee} />
+ 
+  // import { faCopy, faQuestionCircle, faQrcode, faGithub } from '@fortawesome/free-solid-svg-icons';
+ 
 
   return (
-    <div >
-     
-    </div>
+    <FoodContext.Provider value={[foodInfo, setFoodInfo]}>
+      <Router>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/review" element={<Review />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Connect />} />
+          <Route path="/mealDetail/:idMeal" element={<DisplayMeal />} />
+
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </FoodContext.Provider>
   );
 }
 

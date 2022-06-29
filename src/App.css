@@ -1,4 +1,30 @@
+.bg-main{
+  background-color: orangered !important;
+}
+.text-main{
+  color:orangered !important;
+}
+.custom-dark{
+  color: #07a75c !important;
+}
+.btn-main{
+  background-color:orangered !important;
+  border: none !important;
+  outline: none !important;
+}
 
+/* checkout-underLine */
+.checkout-header-underline::after{
+  content: "";
+  width: 120px;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  background-color: orangered;
+}
+.title-text {
+  color: orangered;
+}
 
 .App-link {
   color: #61dafb;

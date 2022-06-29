@@ -1,0 +1,27 @@
+.navbar-brand 
+{
+    color: #090916!important;
+    font-weight: 800 !important; 
+}
+.navbar-brand:hover
+{
+    color: orangered !important;
+    transition: ease-in-out 1s;
+}
+
+.navbar-toggler-icon 
+{
+    background-color: orangered !important;
+}
+
+.nav-link
+{
+    font-size: 16px !important;
+    color: #090916!important;
+    font-weight: 600 !important; 
+}
+.nav-link:hover
+{
+    color: orangered !important;
+    transition: ease-in-out 1s;
+}
