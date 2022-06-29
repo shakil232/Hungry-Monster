@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import NavBar from '../../Shares/NavBar/NavBar';
-
 import { FoodContext } from '../../../App';
 import ReviewCard from '../ReviewCard/ReviewCard';
-
+import swal from 'sweetalert';
 
 
 const Review = () => {
@@ -13,6 +12,9 @@ const Review = () => {
     const handelRemove = id => {
         const remainingMeal = foodInfo.filter(food => food.idMeal !== id)
         setFoodInfo(remainingMeal)
+        swal("Successfully Removed!", "Your Meal has been successfully Removed.", {
+            icon: "success",
+        });
     }
 
     return (

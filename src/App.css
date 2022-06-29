@@ -25,6 +25,9 @@
 .title-text {
   color: orangered;
 }
+.cursor {
+  cursor: pointer;
+}
 
 .App-link {
   color: #61dafb;

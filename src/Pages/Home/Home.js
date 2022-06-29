@@ -11,7 +11,7 @@ const Home = () => {
     const [search, setSearch] = useState('');
     const [card, setCard] = useState([]);
     const [foodInfo, setFoodInfo] = useContext(FoodContext);
-    const [isLoading, setIsLoading] = useState(false);
+ 
 
     // Enter-key-active 
     const enterKeyPress = event => {
@@ -69,9 +69,9 @@ const Home = () => {
                 </div>
 
                 {
-                    isLoading ?
+                    allMeal.length === 0 ?
                         <div className="d-flex align-content-center justify-content-center p-5">
-                <SyncLoader color={"#36D7B7"} loading={isLoading}
+                <SyncLoader color={"#36D7B7"} loading={allMeal}
                     width={8}
                     height={18}
                     radius={10}
